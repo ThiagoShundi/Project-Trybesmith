@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 
-export default function validateLoginName(req: Request, res: Response, next: NextFunction) {
+export default function validateProductsName(req: Request, res: Response, next: NextFunction) {
   const { name } = req.body;
 
   console.log(name);

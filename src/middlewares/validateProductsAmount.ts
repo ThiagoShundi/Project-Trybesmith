@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 
-export default function validateLoginAmount(req: Request, res: Response, next: NextFunction) {
+export default function validateProductsAmount(req: Request, res: Response, next: NextFunction) {
   const { amount } = req.body;
  
   console.log('AMount:', amount);
