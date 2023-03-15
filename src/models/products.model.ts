@@ -11,12 +11,12 @@ const getAllProduct = async (): Promise<IProduct[]> => {
   return rows;
 };
 
-const getByIdProduct = async (id: number) => {
-  const productById = await connection.execute(`
-        SELECT * FROM Trybesmith.products where id = ?;
-      `, [id]);
-  return productById;
-};
+// const getByIdProduct = async (id: number) => {
+//   const productById = await connection.execute(`
+//         SELECT * FROM Trybesmith.products where id = ?;
+//       `, [id]);
+//   return productById;
+// };
 
 const createProduct = async (product: IProduct) => {
   const { name, amount } = product;
@@ -27,4 +27,4 @@ const createProduct = async (product: IProduct) => {
   return { id: insertId, name, amount };
 };
 
-export default { getAllProduct, getByIdProduct, createProduct };
+export default { getAllProduct, createProduct };
