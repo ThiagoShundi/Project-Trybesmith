@@ -1,4 +1,4 @@
-import IProduct from '../interfaces/products.interface';
+import { IProduct } from '../interfaces/products.interface';
 import ProductModel from '../models/products.model';
 
 const getAllProduct = async (): Promise<IProduct[]> => {
