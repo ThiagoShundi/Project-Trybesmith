@@ -30,6 +30,8 @@ app.post(
 
 app.get('/orders', ordersController.getAll);
 
+app.post('/orders', ordersController.create);
+
 app.post('/login', validateLogin, loginController.create);
 
 export default app;

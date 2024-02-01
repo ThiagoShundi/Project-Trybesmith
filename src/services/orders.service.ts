@@ -6,4 +6,10 @@ const getAllOrders = async (): Promise<IOrder[]> => {
   return orders;
 };
 
-export default { getAllOrders };
+const createOrder = async (order: IOrder) => {
+  const products = await OrderModel.createOrder(order);
+
+  return products;
+};
+
+export default { getAllOrders, createOrder };

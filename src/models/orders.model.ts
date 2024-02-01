@@ -10,9 +10,18 @@ const getAllOrders = async (): Promise<IOrder[]> => {
   GROUP BY o.id;
 
     `);  
-  console.log(rows);
 
   return rows;
 };
 
-export default { getAllOrders };
+const createOrder = async (order: IOrder) => {
+  // const { productsIds } = order;
+  const [result] = await connection.execute(
+    'INSERT INTO Trybesmith.orders (productsIds) VALUES (?)',
+    [order.productsIds],
+  );
+  console.log(result);
+  return result;
+};
+
+export default { getAllOrders, createOrder };
